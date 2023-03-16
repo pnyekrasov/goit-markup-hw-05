@@ -7,32 +7,40 @@
   --logo: #4d5ae5;
   --adress-ikon-normal: #4d5ae5;
   --filter-btn-text-normal: #4d5ae5;
+  --card-popup-bg: #4d5ae5;
   --hero-btn-active: #404bbf;
   --sheet-active: #404bbf;
   --adress-active: #404bbf;
   --filter-btn-background-active: #404bbf;
+  --close-btn-bg-active: #404bbf;
   --titles: #2e2f42;
   --logo-hpart: #2e2f42;
   --sheets-normal: #2e2f42;
   --second-backgraund: #2e2f42;
-  --footer-iron-bg-normal: rgba(255, 255, 255, 0.1);
-  --footer-iron-bg-active: #31d0aa;
+  --close-btn-normal: #2e2f42;
+  --footer-ikon-bg-normal: rgba(255, 255, 255, 0.1);
+  --footer-ikon-bg-active: #31d0aa;
   --body-text: #434455;
   --adress-normal: #434455;
   --subtle-text: #8e8f99;
   --customer-normal: #8e8f99;
+  --backdrop: rgba(46, 47, 66, 0.4);
   --header-border: #e7e9fc;
   --footer-text: #e7e9fc;
   --filter-border: #e7e9fc;
   --card-border: #e7e9fc;
+  --close-btn-bg-normal: #e7e9fc;
   --logo-fpart: #f4f4fd;
   --teem-background: #f4f4fd;
   --ikon-text: #f4f4fd;
   --filter-btn-background-normal: #f4f4fd;
+  --popup-text: #f4f4fd;
+  --modal-bg: #fcfcfc;
   --body-background: #ffffff;
   --hero-btn-text: #ffffff;
   --filter-btn-text-active: #ffffff;
   --hero-caption: #ffffff;
+  --close-btn-active: #ffffff;
 
   /**                         Gallary                 */
 
@@ -198,6 +206,22 @@ body {
 .normal:is(:hover, :focus),
 .active {
   color: var(--sheet-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  border-bottom: 4px solid currentColor;
 }
 
 /**                      Contact                      */
@@ -220,6 +244,8 @@ body {
 
 .contact:is(:hover, :focus) {
   color: var(--adress-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*TODO                     STUDIO                    */
@@ -269,6 +295,8 @@ body {
 
 .hero-button:is(:hover, :focus) {
   background-color: var(--hero-btn-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**             Possibilities section             */
@@ -332,6 +360,8 @@ body {
 
 .teem-ikon-bg:is(:hover, :focus) {
   background-color: var(--adress-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**                       Customers                   */
@@ -358,10 +388,14 @@ body {
 
 .customers-item:is(:hover, :focus) {
   border: 1px solid var(--adress-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item:is(:hover, :focus) .customers-link {
   fill: var(--adress-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**TODO                   PORTFOLIO                   */
@@ -398,6 +432,8 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-list {
@@ -410,6 +446,27 @@ body {
   --carts: 3;
 }
 
+.project-card-item:is(:hover, :focus) .project-card-popup-text {
+  transform: translateY(0%);
+}
+
+.project-card-popup {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-popup-text {
+  position: absolute;
+  top: 0;
+  padding: 32px 40px;
+  color: var(--popup-text);
+  background-color: var(--card-popup-bg);
+  height: 100%;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .project-card-box {
   padding: 32px 0 32px 16px;
   border: 1px solid var(--card-border);
@@ -419,6 +476,8 @@ body {
 .project-card-item:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**TODO                   footer                       */
@@ -463,6 +522,8 @@ body {
 
 .footer-ikon-bg:is(:hover, :focus) {
   background-color: var(--footer-iron-bg-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-ikon {
@@ -470,3 +531,85 @@ body {
   height: 24px;
   fill: var(--ikon-text);
 }
+
+/*TODO                    Modal window                  */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop);
+}
+.modal {
+  position: absolute;
+  padding: 24px;
+  width: 408px;
+  min-height: 576px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--modal-bg);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.close-btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+.close-btn-bg {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--close-btn-bg-normal);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.close-btn-ikon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  fill: var(--close-btn-normal);
+}
+
+.close-btn-bg:is(:hover, :focus) {
+  background-color: var(--close-btn-bg-active);
+  border: none;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn-bg:is(:hover, :focus) .close-btn-ikon {
+  fill: var(--close-btn-active);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .header:is(:hover, :focus) {
+  transform: translateY(0%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-popup-text {
+  position: absolute;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} */
