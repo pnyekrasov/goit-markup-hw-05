@@ -540,16 +540,25 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--backdrop);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -500%);
+}
+
 .modal {
   position: absolute;
-  padding: 24px;
   width: 408px;
   min-height: 576px;
+  background: var(--modal-bg);
+  padding: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--modal-bg);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -559,57 +568,32 @@ body {
 }
 
 .close-btn {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
   display: block;
   margin-left: auto;
-}
-
-.close-btn-bg {
-  position: relative;
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
   background: var(--close-btn-bg-normal);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .close-btn-ikon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 8px;
   height: 8px;
   fill: var(--close-btn-normal);
 }
 
-.close-btn-bg:is(:hover, :focus) {
+.close-btn:is(:hover, :focus) {
   background-color: var(--close-btn-bg-active);
   border: none;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-btn-bg:is(:hover, :focus) .close-btn-ikon {
+.close-btn:is(:hover, :focus) .close-btn-ikon {
   fill: var(--close-btn-active);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* .header:is(:hover, :focus) {
-  transform: translateY(0%);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card-popup-text {
-  position: absolute;
-  transform: translateY(100%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-} */
