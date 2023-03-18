@@ -181,6 +181,7 @@ body {
 
 .logo-header {
   padding: 24px 0;
+  outline: none;
 }
 
 .logo-hpart {
@@ -201,13 +202,13 @@ body {
   padding: 24px 0;
   font-weight: 500;
   color: var(--sheets-normal);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
 .normal:is(:hover, :focus),
 .active {
   color: var(--sheet-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .active {
@@ -218,10 +219,11 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   display: block;
   width: 100%;
   border-bottom: 4px solid currentColor;
+  border-radius: 2px;
 }
 
 /**                      Contact                      */
@@ -240,12 +242,12 @@ body {
   color: var(--adress-normal);
   text-decoration: none;
   font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
 .contact:is(:hover, :focus) {
   color: var(--adress-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*TODO                     STUDIO                    */
@@ -291,12 +293,12 @@ body {
   letter-spacing: 0.04em;
   cursor: pointer;
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
 .hero-button:is(:hover, :focus) {
   background-color: var(--hero-btn-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**             Possibilities section             */
@@ -356,12 +358,12 @@ body {
 
 .teem-ikon-bg {
   background-color: var(--adress-ikon-normal);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
 .teem-ikon-bg:is(:hover, :focus) {
   background-color: var(--adress-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**                       Customers                   */
@@ -378,18 +380,19 @@ body {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  outline: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link {
   width: 104px;
   height: 56px;
   fill: var(--customer-normal);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item:is(:hover, :focus) {
   border: 1px solid var(--adress-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item:is(:hover, :focus) .customers-link {
@@ -444,6 +447,7 @@ body {
 
 .project-card-item {
   --carts: 3;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-item:is(:hover, :focus) .project-card-popup-text {
@@ -463,8 +467,7 @@ body {
   background-color: var(--card-popup-bg);
   height: 100%;
   transform: translateY(100%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-box {
@@ -476,8 +479,6 @@ body {
 .project-card-item:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**TODO                   footer                       */
@@ -490,6 +491,10 @@ body {
 .footer-container {
   display: flex;
   align-items: baseline;
+}
+
+.logo-footer {
+  outline: none;
 }
 
 .logo-fpart {
@@ -518,12 +523,12 @@ body {
 
 .footer-ikon-bg {
   background-color: var(--footer-ikon-bg-normal);
+  outline: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-ikon-bg:is(:hover, :focus) {
   background-color: var(--footer-ikon-bg-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-ikon {
@@ -540,8 +545,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--backdrop);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
@@ -552,13 +556,13 @@ body {
   position: absolute;
   width: 408px;
   min-height: 576px;
+  border-radius: 4px;
   background: var(--modal-bg);
   padding: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -568,7 +572,9 @@ body {
 }
 
 .close-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 24px;
   margin-left: auto;
   width: 24px;
@@ -578,149 +584,20 @@ body {
   cursor: pointer;
   background: var(--close-btn-bg-normal);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn-ikon {
   width: 8px;
   height: 8px;
   fill: var(--close-btn-normal);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:is(:hover, :focus) {
   background-color: var(--close-btn-bg-active);
-  border: none;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:is(:hover, :focus) .close-btn-ikon {
   fill: var(--close-btn-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-headline {
-  margin-bottom: 16px;
-  text-align: center;
-  font-weight: 500;
-  color: var(--titles);
-}
-
-.modal-input {
-  margin-bottom: 26px;
-  padding-left: 38px;
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.2);
-  border-radius: 4px;
-  background-color: transparent;
-  outline: none;
-}
-
-.modal-input:is(:hover, :focus) {
-  border-color: var(--card-popup-bg);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input:is(:hover, :focus) + .modal-ikon {
-  fill: var(--card-popup-bg);
-}
-
-.modal-btn {
-  display: block;
-  margin: 0 auto;
-  width: 169px;
-  height: 56px;
-  background: var(--hero-btn-normal);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  cursor: pointer;
-  border: none;
-  color: var(--hero-btn-text);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-.modal-btn:is(:hover, :focus) {
-  background-color: var(--hero-btn-active);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-subtitle {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
-}
-
-.input-wrap {
-  position: relative;
-}
-
-.modal-ikon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 24px;
-  fill: var(--logo-hpart);
-}
-
-.modal-textare {
-  margin-bottom: 16px;
-  padding: 8px 16px;
-  width: 100%;
-  height: 120px;
-  border: 1px solid rgba(46, 47, 66, 0.2);
-  border-radius: 4px;
-  background-color: transparent;
-  outline: none;
-  resize: none;
-}
-
-.modal-textare::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
-}
-
-.check-ikon-bg {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--logo-hpart);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  fill: transparent;
-}
-
-.cher-input:checked + .check-ikon-bg {
-  border: none;
-  fill: var(--ikon-text);
-  background-color: var(--hero-btn-active);
-}
-
-.check-ikon {
-  width: 10px;
-  height: 8px;
-}
-
-.check-text-input {
-  font-style: normal;
-  color: var(--logo);
-}
-
-.check-text {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: var(--check-text);
 }

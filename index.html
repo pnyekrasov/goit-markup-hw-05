@@ -384,7 +384,7 @@
             </div>
         </div>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button class="close-btn" type="button" data-modal-close>
                 <svg class="close-btn-ikon">
@@ -392,56 +392,7 @@
                 </svg>
             </button>
             <!-- <p class="modal-headline">Leave your contacts and we will call you back</p> -->
-            <form class="modal-form">
-                <label>
-                    <span class="modal-subtitle">Name</span>
-                    <span class="input-wrap">
-                        <input class="modal-input" name="user-name" type="text" required minlength="2" maxlength="20" />
-                        <svg class="modal-ikon">
-                            <use href="./images/ikons.svg#icon-name"></use>
-                        </svg>
-                    </span>
-                </label>
-                <label>
-                    <span class="modal-subtitle">Phone</span>
-                    <span class="input-wrap">
-                        <input class="modal-input" name="user-name" type="text" required />
-                        <svg class="modal-ikon">
-                            <use href="./images/ikons.svg#icon-phone"></use>
-                        </svg>
-                    </span>
-                </label>
-                <label>
-                    <span class="modal-subtitle">Email</span>
-                    <span class="input-wrap">
-                        <input class="modal-input" name="user-name" type="text" />
-                        <svg class="modal-ikon">
-                            <use href="./images/ikons.svg#icon-email"></use>
-                        </svg>
-                    </span>
-                </label>
-                <div class="modal-field">
-                    <label class="modal-subtitle" for="user-text">Comment</label>
-                    <textarea class="modal-textare" name="user-text" id="user-text" placeholder="Text input"></textarea>
-                </div>
-                <div class="modal-check">
-                    <input id="cher-input" type="checkbox" class="cher-input" name="user-check" value="true">
-                    <label for="cher-input">
-                        <span class="check-ikon-bg">
-                            <svg class="check-ikon">
-                                <use href="./images/ikons.svg#icon-vector"></use>
-                            </svg>
-                        </span>
-                        <span class="check-text">I accept the terms and conditions of the <a class="check-text-input"
-                                href="#">Privacy
-                                Policy</a>
-                        </span>
-                    </label>
-                </div>
-                <button class="modal-btn" type="submit">
-                    <span>Send</span>
-                </button>
-            </form>
+
         </div>
     </div>
     <script src="./js/modul.js">
